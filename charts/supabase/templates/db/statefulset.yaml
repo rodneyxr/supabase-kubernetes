@@ -36,6 +36,7 @@ spec:
           args:
             - |
               echo "Copying init scripts into existing image script directory..."
+              mkdir -p /initdb.d
               cp -r /docker-entrypoint-initdb.d/* /initdb.d/
               cp /custom-init-scripts/98-webhooks.sql /initdb.d/init-scripts/
               cp /custom-init-scripts/99-roles.sql /initdb.d/init-scripts/
